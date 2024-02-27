@@ -1,0 +1,9 @@
+{
+	"Version": "208.12.254.62000",
+	"Url": "https://testflight.apple.com/join/zD7mKrql",
+	"ExpirationDate": "2024-1-30",
+	"Description": "这是一个新版本的功能描述，欢迎下载试用",
+	"DescriptionEn": "this is a new version, pls update",
+	"CompanyId": ["2104", "2015"],
+	"Gray scale": 10
+}
