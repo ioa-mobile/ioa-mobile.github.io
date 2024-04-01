@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>安卓手机后台运行设置说明</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      background-color: #333;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    main {
+      margin: 0px 20px 20px 20px;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+
+    #images img {
+      /* 设置图片宽度为 100%，即充满屏幕宽度 */
+      width: 100%;
+      /* 设置图片高度为自动调整，以保持图片宽高比 */
+      height: auto;
+    }
+
+    #block {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 页面头部 -->
+  <header>
+    <h1>安卓手机后台运行设置说明</h1>
+  </header>
+
+  <!-- 主体内容 -->
+  <main>
+    <div id="block">
+      <a id="introduction"></a>
+      <h2>一、说明</h2>
+      <p>
+        由于安卓系统具有内存自动回收策略和应用省电策略，应用退到后台长时间静置后，系统会采用优化策略回收应用进程。<br />
+        具体到iOA，退到后台后，可能会出现进程被回收、或者进程被挂起，导致无法正常工作。<br />
+        因此建议进行以下设置，尽可能地保持iOA的后台运行。但是，<b>即使进行了以下设置，系统仍有可能对iOA应用进行回收，iOA进程被回收后手动点击iOA图标重新拉起App/开启快捷办公后可继续正常使用。</b><br />
+        <br />
+        不同厂商的手机或者不同的系统版本，可能设置会存在差异，此文档仅供参考。
+      </p>
+    </div>
+
+    <div id="block">
+      <a id="hw"></a>
+      <h2>二、华为手机（鸿蒙3.0/4.0系统）如何设置应用后台运行</h2>
+      <h3>1、【锁定后台任务】（防杀）</h3>
+      <p>
+        打开iOA界面后——返回桌面——从屏幕底部上滑从屏幕底部向上滑动（有导航栏的点击多任务按钮）——进入多任务页面 ——找到iOA轻轻下滑停顿——右上角出现锁定标志表示锁定成功。
+      </p>
+      <div id="images">
+        <img src="./img/hw_lock.png" />
+      </div>
+
+      <p>
+        锁定后，可避免点击 <img src="./img/hw_clear.png " style="width: 40px; height: auto;" /> 时清理iOA。<br />
+        但需注意的是，如果单独拖动多任务页面中的iOA窗口并上滑，仍会清理掉iOA。
+      </p>
+      <div id="images">
+        <img src="./img/hw_clear_action.png" />
+      </div>
+
+      <h3>2、关闭【省电模式】并运行应用【后台运行】</h3>
+      <p>
+        （2.1）打开华为手机管家——电池——关闭【省电模式】/关闭【超级省电】（如有打开）。
+      </p>
+      <div id="images">
+        <img src="./img/hw_low_battery_1.png" />
+        <img src="./img/hw_low_battery_2.png" />
+        <img src="./img/hw_low_battery_3.png" />
+      </div>
+
+      <p>
+        （2.2）华为手机管家——应用启动管理——找到iOA并点击——【自动管理】开关设置为关，【允许后台活动】设置为开，【允许自启动】/【允许关联启动】亦建议设置为开。
+      </p>
+      <div id="images">
+        <img src="./img/hw_auto_boot_1.png" />
+        <img src="./img/hw_auto_boot_2.png" />
+      </div>
+    </div>
+
+    <div id="block">
+      <a id="miui"></a>
+      <h2>三、小米手机（MIUI 14）如何设置应用后台运行</h2>
+      <h3>1、【锁定后台任务】（防杀）</h3>
+      <p>
+        打开iOA界面后——返回桌面——从屏幕底部上滑从屏幕底部向上滑动（有导航栏的点击多任务按钮）——进入后台任务页面 ——找到iOA长按——点击锁图标——顶部出现锁定标志表示锁定成功。
+      </p>
+      <div id="images">
+        <img src="./img/xm_lock_1.png" />
+        <img src="./img/xm_lock_2.png" />
+        <img src="./img/xm_lock_3.png" />
+      </div>
+
+      <h3>2、【关闭内存拓展】</h3>
+      <p>
+        该功能开启后，系统会额外提供3GB的运行内存。<br />
+        虽然官方并没有指出内存拓展有明确的杀后台现象，但是根据各位网友的反馈，该功能在关闭后，杀后台的现象少了很多，严重怀疑后台进程是不是都是保存在内存拓展的运行内存当中。
+      </p>
+      <p>打开系统设置——更多设置——内存拓展——关闭【内存拓展】并重启设备</p>
+      <div id="images">
+        <img src="./img/xm_mem_expan_1.png" />
+        <img src="./img/xm_mem_expan_2.png" />
+      </div>
+
+      <h3>3、【应用管理】不限制后台运行</h3>
+      <p>
+        桌面长按iOA图标——进入应用信息——电量与性能——电池用量页面中修改为无限制
+      </p>
+      <div id="images">
+        <img src="./img/xm_allow_backend_1.png" />
+        <img src="./img/xm_allow_backend_2.png" />
+        <img src="./img/xm_allow_backend_3.png" />
+      </div>
+
+      <h3>4、【省电设置】</h3>
+      <p>小米手机管家——省电与电池——右上角设置</p>
+      <div id="images">
+        <img src="./img/xm_low_battery_1.png" />
+        <img src="./img/xm_low_battery_2.png" />
+        <img src="./img/xm_low_battery_3.png" />
+      </div>
+      <p>
+        （1）锁屏后清理内存设置“从不”<br />
+        （2）应用智能省电——iOA——后台配置改为无限制
+      </p>
+      <div id="images">
+        <img src="./img/xm_low_battery_4.png" />
+        <img src="./img/xm_low_battery_5.png" />
+        <img src="./img/xm_low_battery_6.png" />
+      </div>
+    </div>
+
+    <div id="block">
+      <a id="vivo"></a>
+      <h2>四、vivo手机（OriginOS 4）如何设置应用后台运行</h2>
+      <h3>1、【锁定后台任务】（防杀）</h3>
+      <p>
+        打开iOA界面后——返回桌面——从屏幕底部上滑从屏幕底部向上滑动（有导航栏的点击多任务按钮）——进入多任务页面——找到iOA轻轻下滑停顿——右上角出现锁定标志表示锁定成功。
+      </p>
+      <div id="images">
+        <img src="./img/vivo_lock_1.png" />
+        <img src="./img/vivo_lock_2.png" />
+        <img src="./img/vivo_lock_3.png" />
+      </div>
+
+      <p>
+        锁定后，可避免点击 <img src="./img/vivo_clear.png " style="width: 40px; height: auto;" /> 时清理iOA。<br />
+        但需注意的是，如果单独拖动多任务页面中的iOA窗口并上滑，仍会清理掉iOA。
+      </p>
+      <div id="images">
+        <img src="./img/vivo_clear_action.png" />
+      </div>
+
+      <h3>2、关闭【省电模式】</h3>
+      <p>打开 i 管家——实用工具——电池管理—— 切换到均衡模式或 Monster 模式 / 关闭【超级省电】（如有打开）</p>
+      <div id="images">
+        <img src="./img/vivo_low_battery_1.png" />
+        <img src="./img/vivo_low_battery_2.png" />
+        <img src="./img/vivo_low_battery_3.png" />
+      </div>
+
+      <h3>3、【后台耗电管理】</h3>
+      <p>设置——应用——应用管理——找到iOA并点击——电量——后台耗电管理——选择【允许后台高耗电】</p>
+      <div id="images">
+        <img src="./img/vivo_allow_backend_1.png" />
+        <img src="./img/vivo_allow_backend_2.png" />
+        <img src="./img/vivo_allow_backend_3.png" />
+        <img src="./img/vivo_allow_backend_4.png" />
+        <img src="./img/vivo_allow_backend_5.png" />
+        <img src="./img/vivo_allow_backend_6.png" />
+      </div>
+
+      <h3>4、【后台启动】</h3>
+      <p>设置——应用——应用管理——找到iOA并点击——权限——所有权限——打开【自启动】，亦建议打开【关联启动】</p>
+      <div id="images">
+        <img src="./img/vivo_auto_boot_1.png" />
+        <img src="./img/vivo_auto_boot_2.png" />
+        <img src="./img/vivo_auto_boot_3.png" />
+        <img src="./img/vivo_auto_boot_4.png" />
+        <img src="./img/vivo_auto_boot_5.png" />
+        <img src="./img/vivo_auto_boot_6.png" />
+      </div>
+    </div>
+
+    <div id="block">
+      <a id="oppo"></a>
+      <h2>五、oppo手机（ColorOS 14）如何设置应用后台运行</h2>
+      <h3>1、【锁定后台任务】（防杀）</h3>
+      <p>
+        打开iOA界面后——返回桌面——从屏幕底部上滑从屏幕底部向上滑动（有导航栏的点击多任务按钮）——进入多任务页面 ——点击三个小点——点击锁定——右上角出现锁定标志表示锁定成功。
+      </p>
+      <div id="images">
+        <img src="./img/oppo_lock_1.png" />
+        <img src="./img/oppo_lock_2.png" />
+        <img src="./img/oppo_lock_3.png" />
+      </div>
+      <p>
+        锁定后，可避免点击【清除】时清理iOA。<br />
+        但需注意的是，如果单独拖动多任务页面中的iOA窗口并上滑，仍会清理掉iOA。
+      </p>
+      <div id="images">
+        <img src="./img/oppo_clear_action.png" />
+      </div>
+
+      <h3>2、关闭【省电模式】</h3>
+      <p>
+        打开设置——电池——省电模式——关闭【省电模式】 / 关闭【超级省电模式】（如有打开）
+      </p>
+      <div id="images">
+        <img src="./img/oppo_low_battery_1.png" />
+        <img src="./img/oppo_low_battery_2.png" />
+        <img src="./img/oppo_low_battery_3.png" />
+        <img src="./img/oppo_low_battery_4.png" />
+      </div>
+
+      <h3>3、【允许后台运行】</h3>
+      <p>
+        手机管家——应用管理——所有应用——找到iOA并点击——耗电管理——开启【允许唤醒前台】【允许完全后台行为】【允许应用自启动】【允许应 用关联启动】
+      </p>
+      <div id="images">
+        <img src="./img/oppo_allow_backend_1.png" />
+        <img src="./img/oppo_allow_backend_2.png" />
+        <img src="./img/oppo_allow_backend_3.png" />
+        <img src="./img/oppo_allow_backend_4.png" />
+        <img src="./img/oppo_allow_backend_5.png" />
+        <img src="./img/oppo_allow_backend_6.png" />
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
