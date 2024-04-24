@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小米手机后台运行设置指引</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="block">
+    <a id="miui"></a>
+    <h2>* 小米手机（MIUI 14）如何设置应用后台运行</h2>
+    <h3>1、【锁定后台任务】（防杀）</h3>
+    <p>
+      打开iOA界面后——返回桌面——从屏幕底部上滑从屏幕底部向上滑动（有导航栏的点击多任务按钮）——进入后台任务页面
+      ——找到iOA长按——点击锁图标——顶部出现锁定标志表示锁定成功。
+    </p>
+    <div id="images">
+      <img src="./img/xm_lock_1.png"/>
+      <img src="./img/xm_lock_2.png"/>
+      <img src="./img/xm_lock_3.png"/>
+    </div>
+
+    <h3>2、【关闭内存拓展】</h3>
+    <p>
+      该功能开启后，系统会额外提供3GB的运行内存。<br/>
+      虽然官方并没有指出内存拓展有明确的杀后台现象，但是根据各位网友的反馈，该功能在关闭后，杀后台的现象少了很多，严重怀疑后台进程是不是都是保存在内存拓展的运行内存当中。
+    </p>
+    <p>打开系统设置——更多设置——内存拓展——关闭【内存拓展】并重启设备</p>
+    <div id="images">
+      <img src="./img/xm_mem_expan_1.png"/>
+      <img src="./img/xm_mem_expan_2.png"/>
+    </div>
+
+    <h3>3、【应用管理】不限制后台运行</h3>
+    <p>
+      桌面长按iOA图标——进入应用信息——电量与性能——电池用量页面中修改为无限制
+    </p>
+    <div id="images">
+      <img src="./img/xm_allow_backend_1.png"/>
+      <img src="./img/xm_allow_backend_2.png"/>
+      <img src="./img/xm_allow_backend_3.png"/>
+    </div>
+
+    <h3>4、【省电设置】</h3>
+    <p>小米手机管家——省电与电池——右上角设置</p>
+    <div id="images">
+      <img src="./img/xm_low_battery_1.png"/>
+      <img src="./img/xm_low_battery_2.png"/>
+      <img src="./img/xm_low_battery_3.png"/>
+    </div>
+    <p>
+      （1）锁屏后清理内存设置“从不”<br/>
+      （2）应用智能省电——iOA——后台配置改为无限制
+    </p>
+    <div id="images">
+      <img src="./img/xm_low_battery_4.png"/>
+      <img src="./img/xm_low_battery_5.png"/>
+      <img src="./img/xm_low_battery_6.png"/>
+    </div>
+  </div>
+  <script>
+    // 向主页面发送子页面的实际高度
+    function sendHeightToParent() {
+      window.parent.postMessage(
+        {
+          height: document.body.scrollHeight + 50,
+          iframeId: 'xiaomi-iframe'
+        },
+        '*' // 您可以将 * 替换为主页面的源，以增加安全性
+      );
+    }
+
+    // 当子页面加载完成时，发送高度信息给主页面
+    window.addEventListener('load', sendHeightToParent, false);
+  </script>
+</body>
+</html>
