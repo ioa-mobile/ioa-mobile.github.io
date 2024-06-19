@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>常见问题</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+		h3 {
+			text-align: center;
+			color: #333;
+		}
+		pre {
+    	white-space: pre-wrap;
+  	}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		.btn {
+			display: inline-block;
+			padding: 4px 20px;
+			background-color: transparent;
+			color: black;
+			border: 1px solid gray;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+		.btn:hover {
+			background-color: #0062cc;
+			color: white;
+		}
+		.link {
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+<pre>
+iOA-SaaS iOS客户端常见问题及处理方法：
+
+1. Q：<b>输入Pin后，为什么无法加载企业配置或无法进入登录页面？</b>
+A：请尝试以下方法进行解决：
+（1）确认输入的Pin码正确无误，Pin码英文不区分大小写。
+（2）检查设备WiFi或移动网络是否可用。
+
+2. Q：<b>登录过程为什么提示账号或密码错误？</b>
+A：请尝试以下方法进行解决：
+（1）核对账号和密码，注意避免输入法错误（大小写、空格、符号等）。
+（2）检查「组织域」是否正确，如需切换可以点击登录页面左上角的「返回」按钮切换到「选择组织域」重新选择。
+（3）如果是管理台新增的账号，或修改账户密码后，服务端需要2分钟左右的时间同步数据，请等待一段时间后重试。
+
+3. Q：<b>修改手势密码后，为什么短时间内在其他设备上使用旧手势密码仍可通过验证？</b>
+A：手势修改后，服务端需要2分钟左右的时间同步数据，请等待一段时间后，再进入其他设备进行重试；如仍不能更新到新密码，请重启iOA应用后重试。
+
+4. Q：<b>使用企微微信、钉钉、飞书等第三方应用授权登录时，为什么调不起第三方应用授权界面，或出现无法登录的情况？</b>
+A：由于第三方应用会对授权来源进行校验，请通过以下方法尝试解决：
+（1）确认其他设备和账号是否可以使用同种方式进行授权登录。如果其他账号也不能登录，请联系管理员检查授权参数配置。如果仅您的设备和账号不能登录，请检查企业微信等的账号是否与iOA的对应。
+（2）请将企业微信、钉钉或飞书升级到最新版本。
+（3）常见的企微微信授权错误码如下：1:操作被取消；2:操作失败；3:操作不支持；4:企业微信版本过低；5:没有此API调用权限（此种情况请检查企业微信账号、机构是否对应）
+
+5. Q：<b>为什么iOA首页上没有TOTP令牌功能的入口？</b>
+A：使用TOTP令牌功能需要先进行绑定，请使用iOA首页右上角扫码功能扫描TOTP绑定码进行绑定。
+
+6. Q：<b>快捷办公功能开启办公后，为什么提示VPN组件异常断开？</b>
+A：iOA快捷办公功能的安全连接基于系统Network Extension实现的，其他VPN类应用一般也是基于该扩展实现，同一时刻系统只允许一个VPN在运行，如果启动了其他VPN应用会抢占iOA的服务。此类情况请停止其他VPN应用，然后重新开启iOA的快捷办公。另外，如果在系统的VPN设置中更改了设置也可能导致VPN组件中断。
+
+7. Q：<b>为什么在最近任务中kill掉iOA后无法关闭快捷办公的VPN连接？</b>
+A：iOS的Network Extension是在独立进程运行的，无法通过最近任务进行关闭。如需关闭快捷办公的VPN连接，请通过iOA页面上的开关进行关闭。
+
+8. Q：<b>为什么iOA在我的手机上会闪退？</b>
+A：iOA iOS客户端目前最低支持版本为iOS 11.0，若您的设备系统低于11.0，请升级系统后使用iOA。另外，iOS 14系统的Network Extension进程的系统可用内存过少，在内网应用较多的情况下访问过程中容易发生OOM内存耗尽异常，建议升级手机系统到15.0以上。
+
+</pre>
+</div>
+</body>
+</html>
