@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guidance for Background Running Settings on Xiaomi Phones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="block">
+    <a id="miui"></a>
+    <h2>* How to Set Application Background Running on Xiaomi Phones (MIUI 14)</h2>
+    <h3>1. [Lock Background Task] (Anti-kill)</h3>
+    <p>
+      Open the iOA interface —— Return to the desktop —— Swipe up from the bottom of the screen (click the multitasking button if there is a navigation bar) —— Enter the background task page
+      —— Find iOA and long press —— Click the lock icon —— A lock symbol appears at the top indicating successful locking.
+    </p>
+    <div id="images">
+      <img src="./img/xm_lock_1.png"/>
+      <img src="./img/xm_lock_2.png"/>
+      <img src="./img/xm_lock_3.png"/>
+    </div>
+
+    <h3>2. [Close Memory Expansion]</h3>
+    <p>
+      After this feature is enabled, the system will provide an additional 3GB of running memory.<br/>
+      Although the official statement does not indicate that memory expansion has a clear phenomenon of killing the background, according to feedback from netizens, after this feature is closed, the phenomenon of killing the background is much less, and it is highly suspected that the background process is saved in the expanded memory.
+    </p>
+    <p>Open system settings —— More settings —— Memory expansion —— Close [Memory Expansion] and restart the device</p>
+    <div id="images">
+      <img src="./img/xm_mem_expan_1.png"/>
+      <img src="./img/xm_mem_expan_2.png"/>
+    </div>
+
+    <h3>3. [Application Management] Do Not Restrict Background Running</h3>
+    <p>
+      Long press the iOA icon on the desktop —— Enter application information —— Battery and performance —— Modify battery usage page to unrestricted
+    </p>
+    <div id="images">
+      <img src="./img/xm_allow_backend_1.png"/>
+      <img src="./img/xm_allow_backend_2.png"/>
+      <img src="./img/xm_allow_backend_3.png"/>
+    </div>
+
+    <h3>4. [Power Saving Settings]</h3>
+    <p>Xiaomi Phone Manager —— Power saving and battery —— Top right corner settings</p>
+    <div id="images">
+      <img src="./img/xm_low_battery_1.png"/>
+      <img src="./img/xm_low_battery_2.png"/>
+      <img src="./img/xm_low_battery_3.png"/>
+    </div>
+    <p>
+      (1) Set "Never" for memory cleanup after screen lock<br/>
+      (2) Application smart power saving —— iOA —— Change backend configuration to unrestricted
+    </p>
+    <div id="images">
+      <img src="./img/xm_low_battery_4.png"/>
+      <img src="./img/xm_low_battery_5.png"/>
+      <img src="./img/xm_low_battery_6.png"/>
+    </div>
+  </div>
+  <script>
+    // Send the actual height of the child page to the main page
+    function sendHeightToParent() {
+      window.parent.postMessage(
+        {
+          height: document.body.scrollHeight + 50,
+          iframeId: 'xiaomi-iframe'
+        },
+        '*' // You can replace * with the source of the main page to increase security
+      );
+    }
+
+    // When the child page is loaded, send the height information to the main page
+    window.addEventListener('load', sendHeightToParent, false);
+  </script>
+</body>
+</html>

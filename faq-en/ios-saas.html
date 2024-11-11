@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Frequently Asked Questions</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+		h3 {
+			text-align: center;
+			color: #333;
+		}
+		pre {
+    	white-space: pre-wrap;
+  	}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		.btn {
+			display: inline-block;
+			padding: 4px 20px;
+			background-color: transparent;
+			color: black;
+			border: 1px solid gray;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+		.btn:hover {
+			background-color: #0062cc;
+			color: white;
+		}
+		.link {
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+<pre>
+iOA-SaaS iOS Client Frequently Asked Questions and Solutions:
+Q: <b>Why can't I load enterprise configuration or enter the login page after entering the Pin?</b>
+A: Please try the following methods to solve the problem:
+(1) Make sure the entered Pin code is correct, and the Pin code is case-insensitive.
+(2) Check if the device's WiFi or mobile network is available.
+
+Q: <b>Why does the login process prompt an account or password error?</b>
+A: Please try the following methods to solve the problem:
+(1) Verify the account and password, paying attention to avoid input method errors (case, space, symbols, etc.).
+(2) Check if the "organization domain" is correct. If you need to switch, click the "back" button on the top left corner of the login page to switch to "select organization domain" and reselect.
+(3) If it is a new account added by the management console or the account password has been modified, the server needs about 2 minutes to synchronize data. Please wait for a while and try again.
+
+Q: <b>Why can I still use the old gesture password on other devices for a short time after changing the gesture password?</b>
+A: After changing the gesture password, the server needs about 2 minutes to synchronize data. Please wait for a while and then try again on other devices; if you still cannot update to the new password, please restart the iOA application and try again.
+
+Q: <b>Why can't I launch the third-party application authorization interface or log in when using third-party applications such as WeChat Work, DingTalk, and Lark for authorization login?</b>
+A: Since third-party applications will verify the source of authorization, please try the following methods to solve the problem:
+(1) Confirm whether other devices and accounts can use the same method for authorization login. If other accounts also cannot log in, please contact the administrator to check the authorization parameter configuration. If only your device and account cannot log in, please check if the enterprise WeChat, etc. account corresponds to iOA.
+(2) Please upgrade WeChat Work, DingTalk, or Lark to the latest version.
+(3) Common WeChat Work authorization error codes: 1: Operation canceled; 2: Operation failed; 3: Operation not supported; 4: Enterprise WeChat version too low; 5: No permission to call this API (in this case, please check if the enterprise WeChat account and organization correspond).
+
+Q: <b>Why is there no entrance for the TOTP token function on the iOA homepage?</b>
+A: To use the TOTP token function, you need to bind it first. Please use the QR code scanning function on the top right corner of the iOA homepage to scan the TOTP binding code for binding.
+
+Q: <b>Why does it prompt VPN component exception disconnection after enabling the quick office function?</b>
+A: The secure connection of the iOA quick office function is based on the system Network Extension. Other VPN applications are generally based on this extension as well. The system only allows one VPN to run at the same time. If another VPN application is started, it will preempt iOA's service. In this case, please stop other VPN applications and then restart iOA's quick office. Additionally, changing the settings in the system's VPN settings may also cause the VPN component to disconnect.
+
+Q: <b>Why can't I close the VPN connection of quick office after killing iOA in the recent tasks?</b>
+A: iOS's Network Extension runs in an independent process and cannot be closed through recent tasks. To close the VPN connection of quick office, please use the switch on the iOA page.
+
+Q: <b>Why does iOA crash on my phone?</b>
+A: The iOA iOS client currently supports a minimum version of iOS 11.0. If your device's system is below 11.0, please upgrade the system before using iOA. Additionally, the system available memory for the Network Extension process in iOS 14 is too low, and OOM memory exhaustion exceptions are likely to occur when accessing multiple intranet applications. It is recommended to upgrade the phone system to 15.0 or above.
+
+</pre>
+</div>
+</body>
+</html>

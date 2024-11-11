@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guidance for Background Running Settings on Android Phones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- 页面头部内容 -->
+  </header>
+  <main id="main-content">
+    <div id="introduction">
+      <h2>Explanation</h2>
+      <p>
+        &ensp;&ensp;&ensp;&ensp;Due to Android's automatic memory recycling strategy and power-saving strategy, when an app is in the background for a long time, the system will adopt optimization strategies to reclaim the app process.<br/>
+        &ensp;&ensp;&ensp;&ensp;Specific to iOA, after going to the background, there may be processes being reclaimed or suspended, resulting in the inability to work properly or connect to the internet.<br/>
+        &ensp;&ensp;&ensp;&ensp;Therefore, it is recommended to make the following settings to maintain the background running of iOA as much as possible. Please note, <b>although these measures can reduce the risk of iOA being killed, they still cannot guarantee that it will not be killed. In extreme cases, such as severe lack of system resources, the system may still terminate the iOA process. After the iOA process is reclaimed, manually click the iOA icon to relaunch the App --After enabling fast office, it can continue to be used normally.</b><br/>
+        <br/>
+        &ensp;&ensp;&ensp;&ensp;Different manufacturers' phones or different system versions may have differences in settings, this document is for reference only.
+      </p>
+    </div>
+    <iframe id="oppo-12-iframe" src="tutor_oppo_12.html" style="width:100%;border:none;"></iframe>
+    <iframe id="oppo-iframe" src="tutor_oppo.html" style="width:100%;border:none;"></iframe>
+    <iframe id="huawei-iframe" src="tutor_huawei.html" style="width:100%;border:none;"></iframe>
+    <iframe id="xiaomi-iframe" src="tutor_xiaomi.html" style="width:100%;border:none;"></iframe>
+    <iframe id="vivo-iframe" src="tutor_vivo.html" style="width:100%;border:none;"></iframe>
+  </main>
+  <script>
+    const iframeIdMap = {
+      oppo12: 'oppo-12-iframe',
+      oppo: 'oppo-iframe',
+      huawei: 'huawei-iframe',
+      xiaomi: 'xiaomi-iframe',
+      vivo: 'vivo-iframe'
+    };
+
+    // 获取 URL 参数
+    const urlParams = new URLSearchParams(window.location.search);
+    const brand = urlParams.get('brand');
+
+    if (brand) {
+      const iframeId = iframeIdMap[brand];
+      if (iframeId) {
+        const topIframe = document.getElementById(iframeId);
+        const mainContent = document.getElementById('main-content');
+        const introduction = document.getElementById('introduction');
+        mainContent.insertBefore(topIframe, introduction.nextSibling);
+      }
+
+      // 优先显示oppo（14系统的，只有12的才显示12的）
+      if (brand === 'oppo12') {
+        const oppoIframe = document.getElementById('oppo-iframe');
+        oppoIframe.style.display = 'none';
+      } else {
+        const oppo12Iframe = document.getElementById('oppo-12-iframe');
+        oppo12Iframe.style.display = 'none';
+      }
+    }
+
+    // 根据子页面发送的消息调整 iframe 高度
+    function receiveHeightFromChild(event) {
+      // 检查消息是否来自我们的子页面，以防止恶意代码
+      if (event.source !== document.getElementById(event.data.iframeId).contentWindow) {
+        return;
+      }
+
+      // 调整相应 iframe 的高度
+      document.getElementById(event.data.iframeId).style.height = event.data.height + 'px';
+    }
+
+    // 监听子页面发送的消息
+    window.addEventListener('message', receiveHeightFromChild, false);
+  </script>
+</body>
+</html>
