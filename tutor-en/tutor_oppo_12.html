@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guidance for Background Running Settings on OPPO Phones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="block">
+    <a id="oppo"></a>
+    <h2>* How to Set Application Background Running on OPPO Phones (ColorOS 12)</h2>
+    <h3>1. [Lock Background Task] (Anti-kill)</h3>
+    <p>
+      Open the iOA interface —— Return to the desktop —— Swipe up from the bottom of the screen (click the multitasking button if there is a navigation bar) —— Enter the multitasking page
+      —— Click three dots —— Click Lock —— A lock icon appears in the upper right corner indicating successful locking.
+    </p>
+    <div id="images">
+      <img src="./img/oppo_12_lock_1.png"/>
+      <img src="./img/oppo_12_lock_2.png"/>
+      <img src="./img/oppo_12_lock_3.png"/>
+    </div>
+    <p>
+      After locking, you can avoid clearing iOA when clicking [Clear].<br/>
+      However, please note that if you drag the iOA window in the multitasking page alone and swipe up, iOA will still be cleared.
+    </p>
+    <div id="images">
+      <img src="./img/oppo_12_clear_action.png"/>
+    </div>
+
+    <h3>2. [Close Power Saving Mode]</h3>
+    <p>
+      Pull down the phone status bar —— Click the settings icon —— Battery —— Close [Power Saving Mode] / Close [Super Power Saving Mode] (if enabled)
+    </p>
+    <div id="images">
+      <img src="./img/oppo_12_low_battery_1.png"/>
+      <img src="./img/oppo_12_low_battery_2.png"/>
+      <img src="./img/oppo_12_low_battery_3.png"/>
+      <img src="./img/oppo_12_low_battery_4.png"/>
+    </div>
+    <p>
+      Enter Battery —— Advanced Settings —— Power Consumption Anomaly Optimization —— Set iOA not to be optimized
+    </p>
+    <div id="images">
+      <img src="./img/oppo_12_low_battery_5.png"/>
+    </div>
+
+    <h3>3. [Allow Background Running]</h3>
+    <p>
+      Settings —— Applications —— Application Management —— Find iOA and click —— Power Consumption Management —— Enable [Allow Wake Up Frontend], [Allow Full Background Behavior], [Allow Application Auto Start], [Allow Application Associated Start]
+    </p>
+    <div id="images">
+      <img src="./img/oppo_12_allow_backend_1.png"/>
+      <img src="./img/oppo_12_allow_backend_2.png"/>
+      <img src="./img/oppo_12_allow_backend_3.png"/>
+      <img src="./img/oppo_12_allow_backend_4.png"/>
+    </div>
+  </div>
+  <script>
+    // Send the actual height of the child page to the main page
+    function sendHeightToParent() {
+      window.parent.postMessage(
+        {
+          height: document.body.scrollHeight + 50,
+          iframeId: 'oppo-12-iframe'
+        },
+        '*' // You can replace * with the source of the main page to increase security
+      );
+    }
+
+    // When the child page is loaded, send the height information to the main page
+    window.addEventListener('load', sendHeightToParent, false);
+  </script>
+</body>
+</html>

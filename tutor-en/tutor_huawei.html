@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guidance for Background Running Settings on Huawei Phones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="block">
+    <a id="hw"></a>
+    <h2>* How to Set Application Background Running on Huawei Phones (HarmonyOS 3.0/4.0 System)</h2>
+    <h3>1. [Lock Background Task] (Anti-kill)</h3>
+    <p>
+      Open the iOA interface —— Return to the desktop —— Swipe up from the bottom of the screen (click the multitasking button if there is a navigation bar) —— Enter the multitasking page
+      —— Find iOA and gently slide down to pause —— A lock icon appears in the upper right corner indicating successful locking.
+    </p>
+    <div id="images">
+      <img src="./img/hw_lock.png"/>
+    </div>
+
+    <p>
+      After locking, you can avoid clearing iOA when clicking <img src="./img/hw_clear.png " style="width: 40px; height: auto;"/>.<br/>
+      However, please note that if you drag the iOA window in the multitasking page alone and swipe up, iOA will still be cleared.
+    </p>
+    <div id="images">
+      <img src="./img/hw_clear_action.png"/>
+    </div>
+
+    <h3>2. Turn off [Power Saving Mode] and Run the Application [Background Running]</h3>
+    <p>
+      (2.1) Open Huawei Phone Manager —— Battery —— Turn off [Power Saving Mode]/Turn off [Super Power Saving] (if enabled).
+    </p>
+    <div id="images">
+      <img src="./img/hw_low_battery_1.png"/>
+      <img src="./img/hw_low_battery_2.png"/>
+      <img src="./img/hw_low_battery_3.png"/>
+    </div>
+
+    <p>
+      (2.2) Huawei Phone Manager —— Application Launch Management —— Find iOA and click —— Set the [Automatic Management] switch to off, set [Allow Background Activity] to on, and it is also recommended to set [Allow Auto Start]/[Allow Associated Launch] to on.
+    </p>
+    <div id="images">
+      <img src="./img/hw_auto_boot_1.png"/>
+      <img src="./img/hw_auto_boot_2.png"/>
+    </div>
+  </div>
+  <script>
+    // Send the actual height of the child page to the main page
+    function sendHeightToParent() {
+      window.parent.postMessage(
+        {
+          height: document.body.scrollHeight + 50,
+          iframeId: 'huawei-iframe'
+        },
+        '*' // You can replace * with the source of the main page to increase security
+      );
+    }
+
+    // When the child page is loaded, send the height information to the main page
+    window.addEventListener('load', sendHeightToParent, false);
+  </script>
+</body>
+</html>

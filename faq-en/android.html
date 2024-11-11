@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Frequently Asked Questions</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+		h3 {
+			text-align: center;
+			color: #333;
+		}
+		pre {
+    	white-space: pre-wrap;
+  	}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		.btn {
+			display: inline-block;
+			padding: 4px 20px;
+			background-color: transparent;
+			color: black;
+			border: 1px solid gray;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+		.btn:hover {
+			background-color: #0062cc;
+			color: white;
+		}
+		.link {
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+<pre>
+iOA Android Client Frequently Asked Questions and Solutions:
+Q: <b>Why can't I load enterprise configuration or enter the login page after entering the server address and port?</b>
+A: Please try the following methods to solve the problem:
+(1) Make sure the entered server address and port are correct.
+(2) Check if the device's WiFi or mobile network is available.
+(3) Try accessing https://<span style="color:blue;">server address</span>:<span style="color:blue;">port</span>/ioa/ping in the system browser or Chrome browser (e.g., <span style="color:gray;">https://183.2.172.185.188:27800/ioa/ping</span>). If the page displays "ok", it means the connection is normal. If it is abnormal, it means the network cannot access the server or the server is unavailable.
+
+Q: <b>Why does the login process prompt an account or password error?</b>
+A: Please try the following methods to solve the problem:
+(1) Verify the account and password, paying attention to avoid input method errors (case, space, symbols, etc.).
+(2) Check if the "organization domain" is correct. If you need to switch, click the "back" button on the top left corner of the login page to switch to "select organization domain" and reselect.
+(3) If it is a new account added by the management console or the account password has been modified, the server needs about 2 minutes to synchronize data. Please wait for a while and try again.
+
+Q: <b>Why can I still use the old gesture password on other devices for a short time after changing the gesture password?</b>
+A: After changing the gesture password, the server needs about 2 minutes to synchronize data. Please wait for a while and then try again on other devices; if you still cannot update to the new password, please restart the iOA application and try again.
+
+Q: <b>Why can't I launch the third-party application authorization interface or log in when using third-party applications such as WeChat Work, DingTalk, and Lark for authorization login?</b>
+A: Since third-party applications will verify the source of authorization, please try the following methods to solve the problem:
+(1) Confirm whether other devices and accounts can use the same method for authorization login. If other accounts also cannot log in, please contact the administrator to check the authorization parameter configuration. If only your device and account cannot log in, please check if the enterprise WeChat, etc. account corresponds to iOA.
+(2) Please upgrade WeChat Work, DingTalk, or Lark to the latest version.
+(3) Common WeChat Work authorization error codes: 5: Parameter configuration inconsistency; 1: Authorization failed (in this case, please check if the enterprise WeChat account and organization correspond), -1: User cancellation.
+
+Q: <b>Why is there no entrance for the TOTP token function on the iOA homepage?</b>
+A: To use the TOTP token function, you need to bind it first. Please use the QR code scanning function on the top right corner of the iOA homepage to scan the TOTP binding code for binding.
+
+Q: <b>Why does it prompt VPN component exception disconnection after enabling the quick office function?</b>
+A: The secure connection of the iOA quick office function is based on the system VpnService service component. Other VPN applications are generally based on this component as well. The system only allows one VpnService service component to run at the same time. If another VPN application is started, it will preempt iOA's service. In this case, please stop other VPN applications and then restart iOA's quick office. Additionally, changing the settings in the system's VPN settings may also cause the VPN component to disconnect.
+
+Q: <b>Why can't I access the intranet application normally after switching networks (e.g., from intranet WiFi to external WiFi/mobile network)?</b>
+A: It is known that some Android systems may not clear the DNS cache IP record in time after enabling VPN and switching networks, causing access problems. Restarting the quick office can solve the problem.
+
+Q: <b>Why can't I access the intranet application normally after iOA goes to the background or is used for a long time?</b>
+A: Since some models will recognize the application entering the background state and take corresponding background running, background networking, and other restriction measures, some systems may also kill the application process. To ensure the normal operation of iOA and not affect the access of intranet applications, please set the system to allow iOA to run in the background. For setting methods, refer to the "User Guide" on the top right corner of the iOA client homepage.
+
+Q: <b>Why does iOA crash on my phone?</b>
+A: iOA has been adapted to mainstream models of Android 6 to 15 and HarmonyOS 3.0 to 4.0. However, due to differences in different models and system versions, some functions may not be compatible. Generally, restarting iOA or uninstalling and reinstalling iOA can make it work normally.
+If iOA cannot be used normally on a newly released system by the manufacturer, please wait for the subsequent adaptation version of iOA to update and use it.
+
+Q: <b>Why does the system prompt that iOA consumes a high amount of battery power?</b>
+A: Since iOA takes over "all DNS requests of the device" and "all network requests of intranet applications", any power consumption used by these network activities is also counted as iOA's power consumption. Therefore, iOA's power consumption depends on the total power consumption of these network activities. iOA itself uses short connections with the gateway for on-demand connections and is not expected to consume any significant power.
+
+Q: <b>Why does iOA run abnormally in dual-boot software or sandboxes?</b>
+A: If some devices have installed Xposed framework, sandboxes, dual-boot software, etc., these software will modify the application running environment, and iOA may not run well in these environments.
+
+</pre>
+</div>
+</body>
+</html>
