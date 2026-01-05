@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAMSUNG手机后台运行设置指引</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container" id="block">
+    <a id="samsung"></a>
+    <h2>* SAMSUNG手机（One UI 6.1（基于Android 14））如何设置应用后台运行</h2>
+    <h3>1、【锁定后台任务】（防杀）</h3>
+    <p>
+      打开iOA界面后——返回桌面——从屏幕底部上滑从屏幕底部向上滑动（有导航栏的点击多任务按钮）——进入多任务页面 —— 点击该应用卡片上的应用图标——选择锁定此应用——右上角出现锁定标志表示锁定成功。
+    </p>
+    <div class="image-container" id="images">
+      <img src="./img/samsung_lock_1.png"/>
+      <img src="./img/samsung_lock_2.png"/>
+      <img src="./img/samsung_lock_3.png"/>
+    </div>
+
+    <p>
+      锁定后，可避免点击【清除】时清理iOA。但需注意的是，如果单独拖动多任务页面中的iOA窗口并上滑，仍会清理掉iOA。
+    </p>
+    <div class="image-container" id="images">
+      <img src="./img/samsung_clear_action.png.png"/>
+    </div>
+
+    <h3>2、关闭【省电模式】</h3>
+    <p>手机状态栏下拉——点击设置图标——电池——关闭【省电模式】 / 关闭【超级省电模式】（如有打开）</p>
+    <div class="image-container" id="images">
+      <img src="./img/samsung_low_battery_1.png"/>
+      <img src="./img/samsung_low_battery_2.png"/>
+      <img src="./img/samsung_low_battery_3.png"/>
+    </div>
+    <p>进入电池——后台使用限制——从不自动休眠的应用程序——设置iOA不休眠</p>
+    <div class="image-container" id="images">
+      <img src="./img/samsung_allow_backend_1.png"/>
+      <img src="./img/samsung_allow_backend_2.png"/>
+      <img src="./img/samsung_allow_backend_3.png"/>
+      <img src="./img/samsung_allow_backend_4.png"/>
+    </div>
+  </div>
+  <script>
+    // 向主页面发送子页面的实际高度
+    function sendHeightToParent() {
+      window.parent.postMessage(
+        {
+          height: document.body.scrollHeight + 50,
+          iframeId: 'samsung-iframe'
+        },
+        '*' // 您可以将 * 替换为主页面的源，以增加安全性
+      );
+    }
+
+    // 当子页面加载完成时，发送高度信息给主页面
+    window.addEventListener('load', sendHeightToParent, false);
+  </script>
+</body>
+</html>
