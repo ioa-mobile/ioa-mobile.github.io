@@ -11,7 +11,7 @@
     <!-- 页面头部内容 -->
   </header>
   <main id="main-content">
-    <div id="introduction">
+    <div class="container" id="introduction">
       <h2>说明</h2>
       <p>
         &ensp;&ensp;&ensp;&ensp;由于安卓系统具有内存自动回收策略和应用省电策略，应用退到后台长时间静置后，系统会采用优化策略回收应用进程。<br/>
@@ -22,6 +22,7 @@
         &ensp;&ensp;&ensp;&ensp;不同厂商的手机或者不同的系统版本，可能设置方法会存在差异，此文档仅供参考。
       </p>
     </div>
+    <iframe id="samsung-iframe" src="tutor_samsung.html" style="width:100%;border:none;"></iframe>
     <iframe id="oppo-12-iframe" src="tutor_oppo_12.html" style="width:100%;border:none;"></iframe>
     <iframe id="oppo-iframe" src="tutor_oppo.html" style="width:100%;border:none;"></iframe>
     <iframe id="huawei-iframe" src="tutor_huawei.html" style="width:100%;border:none;"></iframe>
@@ -30,6 +31,7 @@
   </main>
   <script>
     const iframeIdMap = {
+      samsung: 'samsung-iframe',
       oppo12: 'oppo-12-iframe',
       oppo: 'oppo-iframe',
       huawei: 'huawei-iframe',
