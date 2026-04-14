@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOA 企业安装</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            margin-bottom: 16px;
+        }
+        .app-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .app-badge {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        .app-version {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+        .install-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 14px 48px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+        .install-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+        }
+        .install-btn:active {
+            transform: translateY(0);
+        }
+        .notice {
+            margin-top: 24px;
+            font-size: 13px;
+            color: #999;
+            line-height: 1.6;
+        }
+        .notice strong {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="app-icon" src="https://harmony-1252540719.cos.ap-guangzhou.myqcloud.com/ztsm/app_icon.png" alt="iOA">
+        <div class="app-name">iOA</div>
+        <span class="app-badge">MDM</span>
+        <div class="app-version">版本 108.8.888.62001 (1080888)</div>
+        <button class="install-btn" onclick="installApp()">点击安装</button>
+        <div class="notice">
+            <p><strong>请使用华为浏览器打开此页面</strong></p>
+            <p>企业 MDM 签名 · 无需注册设备</p>
+        </div>
+    </div>
+    <script>
+        function installApp() {
+            var manifestUrl = 'https://harmony-1252540719.cos.ap-guangzhou.myqcloud.com/ztsm/manifest.json5';
+            var deeplink = 'store://enterprise/manifest?url=' + encodeURIComponent(manifestUrl);
+            window.open(deeplink);
+        }
+    </script>
+</body>
+</html>
