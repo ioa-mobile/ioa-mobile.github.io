@@ -77,7 +77,7 @@
     <div class="card">
         <img class="app-icon" src="https://harmony-1252540719.cos.ap-guangzhou.myqcloud.com/app_icon.png" alt="iOA">
         <div class="app-name">iOA（鸿蒙后台版本）</div>
-        <div id="app-version" class="app-version">加载版本信息...</div>
+        <div class="app-version">版本 108.8.903.62001 (108080903)</div>
         <button class="install-btn" onclick="installApp()">点击安装</button>
         <div class="notice">
             <p><strong>请使用华为浏览器打开此页面</strong></p>
@@ -85,23 +85,9 @@
         </div>
     </div>
     <script>
-        var MANIFEST_URL = 'https://harmony-1252540719.cos.ap-guangzhou.myqcloud.com/manifest.json5';
-
-        // 从 COS 拉取 manifest.json5 动态显示版本号
-        fetch(MANIFEST_URL + '?t=' + Date.now())
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                var app = data.app || {};
-                var ver = app.versionName || '未知';
-                var code = app.versionCode || '';
-                document.getElementById('app-version').textContent = '版本 ' + ver + ' (' + code + ')';
-            })
-            .catch(function() {
-                document.getElementById('app-version').textContent = '版本信息获取失败';
-            });
-
         function installApp() {
-            var deeplink = 'store://enterprise/manifest?url=' + encodeURIComponent(MANIFEST_URL);
+            var manifestUrl = 'https://harmony-1252540719.cos.ap-guangzhou.myqcloud.com/manifest.json5';
+            var deeplink = 'store://enterprise/manifest?url=' + encodeURIComponent(manifestUrl);
             window.open(deeplink);
         }
     </script>
