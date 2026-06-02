@@ -75,9 +75,9 @@
 </head>
 <body>
     <div class="card">
-        <img class="app-icon" src="https://harmony-beta-1252540719.cos.ap-guangzhou.myqcloud.com/app_icon.png" alt="iOA">
+        <img class="app-icon" src="https://harmony-mobile-1252540719.cos.ap-guangzhou.myqcloud.com/app_icon.png" alt="iOA">
         <div class="app-name">腾讯 iOA（测试版）</div>
-        <div class="app-version">版本 108.8.1007.62002 (80862002)</div>
+        <div class="app-version">版本 108.8.1013.62002 (80862002)</div>
         <button class="install-btn" onclick="installApp()">点击安装</button>
         <div class="notice">
             <p><strong>（1）请使用华为浏览器打开此页面</strong></p>
@@ -86,7 +86,7 @@
     </div>
     <script>
         function installApp() {
-            var manifestUrl = 'https://harmony-beta-1252540719.cos.ap-guangzhou.myqcloud.com/manifest.json5';
+            var manifestUrl = 'https://harmony-mobile-1252540719.cos.ap-guangzhou.myqcloud.com/manifest.json5';
             var deeplink = 'store://enterprise/manifest?url=' + encodeURIComponent(manifestUrl);
             window.open(deeplink);
         }
