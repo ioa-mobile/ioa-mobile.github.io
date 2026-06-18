@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPN Probe - 内测安装</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            margin-bottom: 16px;
+        }
+        .app-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .app-version {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+        .install-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 14px 48px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(15, 52, 96, 0.5);
+        }
+        .install-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 52, 96, 0.7);
+        }
+        .install-btn:active {
+            transform: translateY(0);
+        }
+        .notice {
+            margin-top: 24px;
+            font-size: 13px;
+            color: #999;
+            line-height: 1.6;
+        }
+        .notice strong {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="app-icon" src="https://harmony-pc-1252540719.cos.ap-guangzhou.myqcloud.com/app_icon.png" alt="iOA">
+        <div class="app-name">VPN TUN 导流验证 Demo</div>
+        <div class="app-version">版本 1.0.0 (1000000)</div>
+        <button class="install-btn" onclick="installApp()">点击安装</button>
+        <div class="notice">
+            <p><strong>（1）请使用华为浏览器打开此页面</strong></p>
+            <p><strong>（2）仅限已登记UDID的测试设备安装</strong></p>
+        </div>
+    </div>
+    <script>
+        function installApp() {
+            var manifestUrl = 'https://harmony-pc-1252540719.cos.ap-guangzhou.myqcloud.com/manifest.json5';
+            var deeplink = 'store://enterprise/manifest?url=' + encodeURIComponent(manifestUrl);
+            window.open(deeplink);
+        }
+    </script>
+</body>
+</html>
